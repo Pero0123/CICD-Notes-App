@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 public class UserController {
@@ -29,14 +28,22 @@ public class UserController {
         return "saved user";
     }
 
-    @PutMapping("/update/{userID}")
-    public String updatedUser(@PathVariable long userID, @RequestBody User user)
+    @PutMapping("/update/{userId}")
+    public String updatedUser(@PathVariable long userId, @RequestBody User user)
     {
-        User updatedUser = userRepo.findById(userID).get();
+        User updatedUser = userRepo.findById(userId).get();
         updatedUser.setUserId(user.getUserId());
         updatedUser.setPassword(user.getPassword());
         updatedUser.setUsername(user.getUsername());
         userRepo.save(updatedUser);
-        return("Updated");
+        return "Updated";
+    }
+
+    @DeleteMapping("delete/{userId}")
+    public String deleteUser(@PathVariable long userId)
+    {
+        User deleteUser = userRepo.findById(userId).get();
+        userRepo.delete(deleteUser);
+        return "Delete user with the id:" + userId;
     }
 }
