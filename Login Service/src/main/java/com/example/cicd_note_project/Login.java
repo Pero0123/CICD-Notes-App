@@ -19,7 +19,7 @@ public class Login {
         Optional<User> existingUser = loginService.getUserByUsername(user.getUsername());
         if(existingUser.isPresent()&& Objects.equals(user.getPassword(), existingUser.get().getPassword()))
         {
-            return "Login successful";
+            return "Login successful" + existingUser.get().getUserId();
         }
         else
         {
