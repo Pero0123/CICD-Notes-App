@@ -9,7 +9,6 @@ import java.util.Optional;
 
 @FeignClient(name="Login-Client", url="https://localhost:8080")
 public interface LoginClient {
-    @GetMapping("/{username}/{pasword}")
-    public Optional<User> getUserByUsername(@PathVariable String username);
+
 
 }
