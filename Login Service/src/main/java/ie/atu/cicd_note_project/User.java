@@ -1,4 +1,4 @@
-package com.example.cicd_note_project;
+package ie.atu.cicd_note_project;
 
 
 import jakarta.persistence.*;

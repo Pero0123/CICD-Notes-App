@@ -1,4 +1,4 @@
-package com.example.cicd_note_project;
+package ie.atu.cicd_note_project;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
