@@ -1,4 +1,4 @@
-package com.example.cicd_note_project;
+package ie.atu.cicd_note_project;
 
 
 import jakarta.persistence.*;
@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long userId;
     @Column
     private String username;
