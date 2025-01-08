@@ -1,10 +1,8 @@
-package com.example.cicd_note_project;
+package ie.atu.cicd_note_project;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -19,7 +17,7 @@ public class Login {
         Optional<User> existingUser = loginService.getUserByUsername(user.getUsername());
         if(existingUser.isPresent()&& Objects.equals(user.getPassword(), existingUser.get().getPassword()))
         {
-            return "Login successful" + existingUser.get().getUserId();
+            return "Login successful userID = " + existingUser.get().getUserId();
         }
         else
         {
